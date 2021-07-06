@@ -32,7 +32,7 @@ class BaseEntity (db.Model):
   def list_records (Entity, **kwargs):
     return Entity.query.filter_by(
       **kwargs
-    ).filter(Entity.status.isnot(0))
+    ).filter(Entity.status.notin_((0,)))
 
   @classmethod
   def delete_record (Entity, **kwargs):

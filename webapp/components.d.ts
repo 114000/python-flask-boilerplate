@@ -7,6 +7,7 @@ declare module 'vue' {
     ContentBox: typeof import('./src/components/ContentBox.vue')['default']
     Footer: typeof import('./src/components/Footer.vue')['default']
     FormLabel: typeof import('./src/components/FormLabel.vue')['default']
+    Header copy: typeof import('./src/components/Header copy.vue')['default']
     Header: typeof import('./src/components/Header.vue')['default']
     IconCustomers: typeof import('./src/components/IconCustomers.vue')['default']
     IconDashboard: typeof import('./src/components/IconDashboard.vue')['default']
@@ -15,7 +16,12 @@ declare module 'vue' {
     ListBox: typeof import('./src/components/ListBox.vue')['default']
     PageHead: typeof import('./src/components/PageHead.vue')['default']
     README: typeof import('./src/components/README.md')['default']
+    Sidebar copy: typeof import('./src/components/Sidebar copy.vue')['default']
     Sidebar: typeof import('./src/components/Sidebar.vue')['default']
+    Help: typeof import('./src/components/header/Help.vue')['default']
+    Notifications: typeof import('./src/components/header/Notifications.vue')['default']
+    SearchModal: typeof import('./src/components/header/SearchModal.vue')['default']
+    UserMenu: typeof import('./src/components/header/UserMenu.vue')['default']
   }
 }
 
