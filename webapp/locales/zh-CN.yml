@@ -1,15 +1,24 @@
 access:
   welcome_back: 欢迎回来!
-button:
-  about: 关于
-  back: 返回
-  go: 确定
-  home: 首页
-  toggle_dark: 切换深色模式
-  toggle_langs: 切换语言
-intro:
-  desc: 固执己见的 Vite 项目模板
-  dynamic-route: 动态路由演示
-  hi: 你好，{name}
-  whats-your-name: 输入你的名字
+  sign_in: 登录
+
+header:
+  sign_out: 退出
+  select_language: 选择语言
+  
+common:
+  settings: 设置
+
+menus:
+  dashboard: 仪表盘
+  permission: 权限管理
+  permissions: 权限管理
+  roles: 角色管理
+  users: 用户管理
+  projects: 项目管理
+  monitor: 监控管理
+  cameras: 相机
+  screens: 屏幕
+  settings: 系统设置
+
 not-found: 未找到页面

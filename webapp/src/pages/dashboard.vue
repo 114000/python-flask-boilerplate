@@ -1,34 +1,94 @@
 <template>
-  <n-form :model="model" ref="form" :rules="rules">
-    <n-form-item-row path="age" label="年龄">
-      <n-input v-model:value="model.age" @keydown.enter.prevent />
-    </n-form-item-row>
-  </n-form>
+  <!-- Welcome banner -->
+  <WelcomeBanner />
+
+  <!-- Dashboard actions -->
+  <div class="sm:flex sm:justify-between sm:items-center mb-8">
+    <!-- Left: Avatars -->
+    <DashboardAvatars />
+
+    <!-- Right: Actions -->
+    <div class="grid grid-flow-col sm:auto-cols-max justify-start sm:justify-end gap-2">
+      <!-- Filter button -->
+      <FilterButton />
+      <!-- Datepicker built with flatpickr -->
+      <Datepicker />
+      <!-- Add view button -->
+      <button class="btn bg-indigo-500 hover:bg-indigo-600 text-white">
+        <svg class="w-4 h-4 fill-current opacity-50 flex-shrink-0" viewBox="0 0 16 16">
+          <path
+            d="M15 7H9V1c0-.6-.4-1-1-1S7 .4 7 1v6H1c-.6 0-1 .4-1 1s.4 1 1 1h6v6c0 .6.4 1 1 1s1-.4 1-1V9h6c.6 0 1-.4 1-1s-.4-1-1-1z"
+          />
+        </svg>
+        <span class="hidden xs:block ml-2">Add view</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Cards -->
+  <div class="grid grid-cols-12 gap-6">
+    <DashboardCard01 />
+    <DashboardCard02 />
+    <DashboardCard03 />
+    <DashboardCard04 />
+    <DashboardCard05 />
+    <DashboardCard06 />
+    <DashboardCard07 />
+    <DashboardCard08 />
+    <DashboardCard09 />
+    <DashboardCard10 />
+    <DashboardCard11 />
+  </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { ref } from 'vue'
+import Sidebar from '../partials/Sidebar.vue'
+import Header from '../partials/Header.vue'
+import WelcomeBanner from '../partials/dashboard/WelcomeBanner.vue'
+import DashboardAvatars from '../partials/dashboard/DashboardAvatars.vue'
+import FilterButton from '../partials/actions/FilterButton.vue'
+import Datepicker from '../partials/actions/Datepicker.vue'
+import DashboardCard01 from '../partials/dashboard/DashboardCard01.vue'
+import DashboardCard02 from '../partials/dashboard/DashboardCard02.vue'
+import DashboardCard03 from '../partials/dashboard/DashboardCard03.vue'
+import DashboardCard04 from '../partials/dashboard/DashboardCard04.vue'
+import DashboardCard05 from '../partials/dashboard/DashboardCard05.vue'
+import DashboardCard06 from '../partials/dashboard/DashboardCard06.vue'
+import DashboardCard07 from '../partials/dashboard/DashboardCard07.vue'
+import DashboardCard08 from '../partials/dashboard/DashboardCard08.vue'
+import DashboardCard09 from '../partials/dashboard/DashboardCard09.vue'
+import DashboardCard10 from '../partials/dashboard/DashboardCard10.vue'
+import DashboardCard11 from '../partials/dashboard/DashboardCard11.vue'
 
-export default defineComponent({
+export default {
+  name: 'Dashboard',
+  components: {
+    Sidebar,
+    Header,
+    WelcomeBanner,
+    DashboardAvatars,
+    FilterButton,
+    Datepicker,
+    DashboardCard01,
+    DashboardCard02,
+    DashboardCard03,
+    DashboardCard04,
+    DashboardCard05,
+    DashboardCard06,
+    DashboardCard07,
+    DashboardCard08,
+    DashboardCard09,
+    DashboardCard10,
+    DashboardCard11,
+  },
   setup() {
-    const formRef = ref(null)
-    const modelRef = ref({
-      age: null,
-    })
+
+    const sidebarOpen = ref(false)
 
     return {
-      formRef,
-      model: modelRef,
-      rules: {
-        age: [
-          {
-            required: true,
-            message: '需要年龄2',
-            trigger: ['input', 'blur'],
-          },
-        ],
-      },
+      sidebarOpen,
     }
-  },
-})
+  }
+}
 </script>

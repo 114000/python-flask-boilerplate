@@ -1,9 +1,12 @@
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { computed, defineComponent, watch } from 'vue'
+import { useRouter } from 'vue-router'
 import SearchModal from './header/SearchModal.vue'
 import Notifications from './header/Notifications.vue'
 import Help from './header/Help.vue'
+import Languages from './header/Languages.vue'
 import UserMenu from './header/UserMenu.vue'
+import { useUser } from '~/logic'
 
 export default defineComponent({
   name: 'Header',
@@ -12,6 +15,7 @@ export default defineComponent({
     Notifications,
     Help,
     UserMenu,
+    Languages,
   },
   props: {
     sidebarOpen: {
@@ -20,6 +24,21 @@ export default defineComponent({
     },
   },
   emits: ['toggle-sidebar'],
+
+  setup() {
+    const router = useRouter()
+    const { userInfo, noUser } = useUser()
+
+    const user = computed(() => userInfo.value.user || {})
+
+    watch(userInfo, () => {
+      noUser() && router.replace('/access/signin')
+    }, { immediate: true })
+
+    return {
+      user,
+    }
+  },
 })
 </script>
 <template>
@@ -53,9 +72,9 @@ export default defineComponent({
           <SearchModal />
           <Notifications />
           <Help />
-          <!-- Divider -->
-          <hr class="w-px h-6 bg-gray-200 mx-3" />
-          <UserMenu />
+          <Languages />
+          <Divider />
+          <UserMenu :user="user" />
         </div>
       </div>
     </div>
