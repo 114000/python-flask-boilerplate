@@ -43,8 +43,6 @@
 
 <script lang="ts">
 import { ref } from 'vue'
-import Sidebar from '../partials/Sidebar.vue'
-import Header from '../partials/Header.vue'
 import WelcomeBanner from '../partials/dashboard/WelcomeBanner.vue'
 import DashboardAvatars from '../partials/dashboard/DashboardAvatars.vue'
 import FilterButton from '../partials/actions/FilterButton.vue'
@@ -64,8 +62,6 @@ import DashboardCard11 from '../partials/dashboard/DashboardCard11.vue'
 export default {
   name: 'Dashboard',
   components: {
-    Sidebar,
-    Header,
     WelcomeBanner,
     DashboardAvatars,
     FilterButton,
@@ -83,12 +79,11 @@ export default {
     DashboardCard11,
   },
   setup() {
-
     const sidebarOpen = ref(false)
 
     return {
       sidebarOpen,
     }
-  }
+  },
 }
 </script>

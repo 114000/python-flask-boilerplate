@@ -2,8 +2,8 @@
 import { computed, defineComponent, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import SearchModal from './header/SearchModal.vue'
-import Notifications from './header/Notifications.vue'
-import Help from './header/Help.vue'
+// import Notifications from './header/Notifications.vue'
+// import Help from './header/Help.vue'
 import Languages from './header/Languages.vue'
 import UserMenu from './header/UserMenu.vue'
 import { useUser } from '~/logic'
@@ -12,8 +12,8 @@ export default defineComponent({
   name: 'Header',
   components: {
     SearchModal,
-    Notifications,
-    Help,
+    // Notifications,
+    // Help,
     UserMenu,
     Languages,
   },
@@ -70,8 +70,8 @@ export default defineComponent({
         <!-- Header: Right side -->
         <div class="flex items-center">
           <SearchModal />
-          <Notifications />
-          <Help />
+          <!-- <Notifications />
+          <Help /> -->
           <Languages />
           <Divider />
           <UserMenu :user="user" />
