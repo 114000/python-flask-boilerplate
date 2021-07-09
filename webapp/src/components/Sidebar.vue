@@ -50,6 +50,7 @@ export default defineComponent({
       emit('close-sidebar')
     }
 
+
     useEventListener(document, 'click', clickHandler)
     useEventListener(document, 'keydown', keyHandler)
 
@@ -115,7 +116,7 @@ export default defineComponent({
           >
             <router-link
               :to="item.children ? '' : item.value"
-              @click="item.children && toggleExpandKey(item.value)"
+              @click="item.children ? toggleExpandKey(item.value) : $emit('close-sidebar')"
             >
               <div class="flex flex-grow items-center">
                 <!-- 动态图标 -->
@@ -145,7 +146,11 @@ export default defineComponent({
                 class="py-1 block hover:text-indigo-400 text-gray-200 transition"
                 :class="route.path.startsWith(sub.value) ? 'text-indigo-400' : 'text-gray-200'"
               >
-                <router-link :to="sub.value" class="block text-sm">
+                <router-link
+                  class="block text-sm"
+                  :to="sub.value"
+                  @click="$emit('close-sidebar')"
+                >
                   {{ t(`menus.${sub.name}`) }}
                 </router-link>
               </li>

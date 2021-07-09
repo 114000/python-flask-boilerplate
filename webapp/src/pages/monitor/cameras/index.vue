@@ -21,7 +21,6 @@ export default {
     ApplicationsCard03,
   },
   setup() {
-
     const sidebarOpen = ref(false)
 
     const items01 = ref([
