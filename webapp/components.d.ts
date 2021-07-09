@@ -4,10 +4,11 @@
 declare module 'vue' {
   export interface GlobalComponents {
     Button: typeof import('./src/components/Button.vue')['default']
-    ContentBox: typeof import('./src/components/ContentPannel.vue')['default']
+    ContentPannel: typeof import('./src/components/ContentPannel.vue')['default']
     Divider: typeof import('./src/components/Divider.vue')['default']
     FormLabel: typeof import('./src/components/FormLabel.vue')['default']
     Header: typeof import('./src/components/Header.vue')['default']
+    IconButton: typeof import('./src/components/IconButton.vue')['default']
     InputBox: typeof import('./src/components/InputBox.vue')['default']
     ListBox: typeof import('./src/components/ListBox.vue')['default']
     Logo: typeof import('./src/components/Logo.vue')['default']

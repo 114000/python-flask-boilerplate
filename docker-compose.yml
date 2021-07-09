@@ -46,7 +46,7 @@ services:
     build: ./webapp
     container_name: web-service
     ports:
-      - 80:80
+      - 8881:80
     networks:
       - webapp-network
     depends_on:
