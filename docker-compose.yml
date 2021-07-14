@@ -45,6 +45,7 @@ services:
   webapp-service:
     build: ./webapp
     container_name: web-service
+    restart: always
     ports:
       - 8881:80
     networks:
