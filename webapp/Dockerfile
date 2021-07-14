@@ -1,4 +1,4 @@
-# build front-end
+### build front-end
 FROM node:14-alpine as build
 
 WORKDIR /app
@@ -13,7 +13,7 @@ RUN npm run build:docker
 
 RUN rm -rf ./node_modules
 
-# serve front-end bundle project
+### serve front-end bundle project
 
 FROM nginx:stable-alpine
 
